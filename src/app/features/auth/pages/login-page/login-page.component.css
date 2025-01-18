@@ -1,0 +1,54 @@
+body {
+  background-color: var(--light);
+}
+
+.login-container {
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.card .card-header {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+.card .form-floating {
+  position: relative;
+}
+
+.card .form-floating input {
+  border-radius: 8px;
+  border: 1px solid var(--secondary);
+}
+
+.card .form-floating input:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-color: var(--primary);
+}
+
+.card .form-floating label {
+  transition: var(--transition-speed);
+  color: rgba(108, 117, 125, 0.8); /* Simulando color.scale($secondary, $lightness: -20%) */
+}
+
+.card button {
+  background: var(--success); /* Mantiene el color verde */
+  border: none;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card button:hover {
+  background-color: rgba(40, 167, 69, 0.9); /* Simulación de color.scale($success, $lightness: -10%) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .form-error {
+  color: var(--danger); /* Feedback de error en color rojo */
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}

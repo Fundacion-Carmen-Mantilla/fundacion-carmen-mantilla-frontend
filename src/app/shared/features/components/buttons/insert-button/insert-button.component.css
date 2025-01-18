@@ -1,0 +1,14 @@
+button {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+button:hover {
+  background-color: rgba(44, 76, 88, 0.9); /* Ajustado manualmente para simular "color.scale" */
+}
+
+button:disabled {
+  background-color: var(--light);
+  color: var(--dark);
+  cursor: not-allowed;
+}

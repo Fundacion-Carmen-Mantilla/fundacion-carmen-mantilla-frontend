@@ -1,0 +1,67 @@
+.container {
+  background-color: var(--light);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.container form h3 {
+  color: var(--primary);
+}
+
+.container form .form-floating .form-control,
+.container form .form-floating .form-select {
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.container form .form-floating .form-control:focus,
+.container form .form-floating .form-select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(44, 76, 88, 0.7); /* Ajustado manualmente para limitar "color.scale" */
+}
+
+.container form .form-floating .form-control.is-invalid,
+.container form .form-floating .form-select.is-invalid {
+  border-color: var(--danger);
+}
+
+.container form .form-floating label {
+  color: var(--secondary);
+}
+
+.container form .form-floating .form-control:focus ~ label,
+.container form .form-floating .form-select:focus ~ label {
+  color: var(--primary);
+}
+
+.container form .form-check input {
+  accent-color: var(--primary);
+}
+
+.container form .form-check input:focus {
+  outline: 2px solid var(--primary);
+}
+
+.container form .form-check label {
+  color: var(--primary);
+}
+
+.container form button {
+  border-radius: 8px;
+  transition: background-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.container form button:hover {
+  background-color: rgba(44, 76, 88, 0.85); /* Ajustado manualmente, basado en el cálculo de `color.scale` */
+}
+
+.container form button:disabled {
+  background-color: var(--secondary);
+  cursor: not-allowed;
+}
+
+h3.form-title {
+  color: var(--primary);
+}

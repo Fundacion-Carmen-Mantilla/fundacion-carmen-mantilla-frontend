@@ -1,0 +1,161 @@
+<!-- Start Hero -->
+<div class="container home-container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <!-- Imagen -->
+    <div class="col-10 col-sm-8 col-lg-6">
+      <img ngSrc="logo-circular_du8znm.png"
+           class="d-block mx-lg-auto img-fluid logo-funcarmen"
+           alt="Fundación Carmen Mantilla"
+           width="700"
+           height="500"
+           loading="lazy"
+      >
+    </div>
+    <!-- Texto al lado de la imagen -->
+    <div class="col-lg-6">
+      <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
+        Transformando vidas con inclusión social
+      </h1>
+      <p class="lead">
+        Llevamos esperanza y bienestar a comunidades vulnerables a través de
+        proyectos sociales que marcan la diferencia. Únete a nuestra misión
+        de construir un futuro lleno de oportunidades.
+      </p>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+        <a type="button" class="btn btn-primary btn-lg px-4 me-md-2" routerLink="/quienes-somos">
+          Conoce más
+        </a>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+          Contáctanos
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Hero -->
+<!-- Start Features -->
+<div class="container features-container py-5">
+  <!-- Sección de Misión -->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="lc-block">
+        <span class="small mt-4 d-block text-secondary">NUESTRA MISIÓN</span>
+        <h2 class="display-2 mb-0 text-primary"><b>Transformamos realidades con fe y esperanza</b></h2>
+        <p class="lead">
+          La Fundación Carmen Mantilla nació para servir, inspirada en el legado de su fundadora y en su incansable amor por los más
+          necesitados. Trabajamos para mejorar la calidad de vida de comunidades vulnerables a través de proyectos sociales, culturales,
+          ambientales, educativos y espirituales. Nos guiamos por la fe, el compromiso y el amor al prójimo, construyendo un camino hacia un
+          futuro brillante lleno de oportunidades. Nuestro objetivo: promover la inclusión, rescatar la cultura y sembrar valores sólidos en
+          nuestros beneficiarios, especialmente niños, niñas y jóvenes, quienes representan el futuro de la sociedad.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Primera fila de tarjetas -->
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Educación para Crecer</h4>
+          <p class="lead">Llevamos conocimiento y oportunidades a quienes más lo necesitan, garantizando acceso a una educación inclusiva
+            que transforma vidas y familias.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Cultura para la Paz</h4>
+          <p class="lead">A través de nuestro grupo artístico FUNCAM y la academia cultural, enseñamos danzas tradicionales y valores que
+            unen generaciones.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Apoyo Integral</h4>
+          <p>Nos enfocamos en mejorar la calidad de vida con proyectos de alimentación, capacitación y emprendimiento para las familias más
+            necesitadas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segunda fila de tarjetas -->
+  <div class="row mt-4">
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Ayuda Humanitaria</h4>
+          <p class="lead">Proveemos alimento, vivienda, utensilios escolares, recreación y orientación a quienes enfrentan situaciones
+            críticas.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Inclusión con Equidad</h4>
+          <p class="lead">Construimos espacios seguros de participación, reduciendo la exclusión social y generando oportunidades para
+            todos.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-lg-5 p-4 shadow feature-card">
+        <div class="lc-block mb-4">
+          <h4 class="my-3 text-primary">Valores y Espiritualidad</h4>
+          <p class="lead">Fomentamos valores éticos, morales y espirituales, construyendo una sociedad reconciliada, solidaria y cargada de
+            esperanza.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Features -->
+<!-- Start programs of partners who support us -->
+<div class="container partner-container col-xxl-8 px-4 py-5">
+  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+    <div class="col-12">
+      <h1 class="display-5 fw-bold text-center lh-1 mb-3">
+        Nuestros Patrocinadores
+      </h1>
+      <p class="text-center lead mb-4">
+        Nos enorgullece contar con el apoyo de estas instituciones y organizaciones que han contribuido al crecimiento de nuestra misión.
+        Descubre a nuestros aliados, quienes nos ayudan a llevar esperanza y bienestar donde más se necesita.
+      </p>
+
+      <!-- Contenedor del carrusel -->
+      @if (partners$ | async; as partners) {
+        <div class="slider">
+          <div class="logos">
+            @for (partner of partners; track partner) {
+              <img
+                [src]="partner.logo"
+                [alt]="partner.name"
+                class="img-fluid carousel-logo mx-3"
+              />
+            }
+          </div>
+          <div class="logos">
+            @for (partner of partners; track partner) {
+              <img
+                [src]="partner.logo"
+                [alt]="partner.name"
+                class="img-fluid carousel-logo mx-3"
+              />
+            }
+          </div>
+        </div>
+      } @else {
+        <p>Cargando patrocinadores...</p>
+      }
+      <ng-template #loading>
+        <p>Cargando patrocinadores...</p>
+      </ng-template>
+    </div>
+  </div>
+</div>
+<!-- End programs of partners who support us -->

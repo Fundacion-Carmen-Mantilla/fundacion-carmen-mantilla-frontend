@@ -1,0 +1,41 @@
+/* Fondo principal del footer */
+.footer-container {
+  background-color: var(--primary); /* Fondo principal del footer */
+  color: var(--light); /* Texto blanco para buen contraste */
+}
+
+/* Fondo del mapa con superposición */
+.background-footer {
+  height: 30vh;
+  background: url('/assets/img/footer/WorldMap.svg') center / cover repeat;
+  position: relative;
+  margin-top: -100px;
+}
+
+.background-footer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(44, 76, 88, 0.8); /* Superposición semitransparente con color-darkblue */
+}
+
+/* Social icons (posición ajustada) */
+.social-wrapper {
+  position: relative; /* Aseguramos que los iconos respeten su contexto */
+  margin-top: 20px; /* Agregamos espacio entre el copyright y los iconos */
+  margin-bottom: 80px;
+}
+
+/* Botones de iconos sociales */
+.btn-outline-light {
+  transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: var(--success); /* Iconos resaltan en verde claro al activar hover */
+  color: var(--light); /* Color blanco del icono en hover */
+}
+
+.btn-outline-light i {
+  font-size: 1.5rem; /* Tamaño del ícono dentro del botón */
+}

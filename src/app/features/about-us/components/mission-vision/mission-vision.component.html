@@ -1,0 +1,41 @@
+<div class="container py-5">
+  <!-- Sección: Título General -->
+  <div class="row text-center mb-5">
+    <div class="col">
+      <h1 class="main-title">Nuestra Misión y Visión</h1>
+      <p class="subtitle">Con propósito, calidad humana y compromiso social</p>
+    </div>
+  </div>
+
+  <div class="row g-5">
+    <!-- Bloque de Misión -->
+    <div class="col-md-6">
+      <div class="card mission-card">
+        <div class="card-body">
+          <h2 class="card-title">Misión</h2>
+          <p class="card-text">
+            Somos <strong>Fundación Carmen Mantilla</strong>, una entidad con compromiso social, que gestiona el
+            bienestar integral de personas vulnerables. Trabajamos con calidad humana, compromiso y responsabilidad
+            social para obtener los mejores resultados en cada una de las metas propuestas y así satisfacer las
+            necesidades de nuestros beneficiarios.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bloque de Visión -->
+    <div class="col-md-6">
+      <div class="card vision-card">
+        <div class="card-body">
+          <h2 class="card-title">Visión</h2>
+          <p class="card-text">
+            @if (visionYear$ | async; as visionYear) {
+              En el año
+              <strong>{{ visionYear }}</strong>, seremos una entidad reconocida y posicionada a nivel nacional e internacional por nuestra labor social, ejecutando proyectos financiados por empresas públicas y privadas, dirigidos al mejoramiento de la calidad de vida de nuestros beneficiarios y personas vulnerables.
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

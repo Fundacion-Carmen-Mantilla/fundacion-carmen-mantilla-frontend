@@ -1,0 +1,8 @@
+button {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+button:hover {
+  background-color: rgba(108, 117, 125, 0.9); /* Ajustado manualmente para simular "color.scale" */
+}

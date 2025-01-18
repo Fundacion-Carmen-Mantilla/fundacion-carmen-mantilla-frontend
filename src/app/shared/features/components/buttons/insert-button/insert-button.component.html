@@ -1,0 +1,9 @@
+<button
+  [disabled]="disabled || isLoading"
+  class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2"
+>
+  @if (isLoading) {
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+  }
+  <span>{{ isLoading ? 'Cargando...' : label }}</span>
+</button>

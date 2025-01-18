@@ -1,0 +1,64 @@
+/* Contenedor General */
+.container {
+  max-width: 1200px;
+  border-radius: 10px;
+  margin: 0 auto; /* Centramos el contenedor horizontalmente */
+}
+
+/* Títulos de Secciones */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary); /* Azul Oscuro */
+  margin-bottom: 2rem;
+}
+
+/* Estilo para el Organigrama */
+.org-chart {
+  border: 2px solid var(--secondary); /* Borde para destacar */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.org-chart:hover {
+  transform: scale(1.03); /* Efecto sutil al pasar el cursor */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Nueva fila de imágenes */
+.tax-images {
+  gap: 2rem; /* Espaciado entre las imágenes */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tax-img {
+  width: 30%; /* Cada imagen ocupa el 30% del ancho del contenedor */
+  max-width: 300px; /* Limita el tamaño máximo */
+  height: auto; /* Mantiene la relación de aspecto */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  object-fit: contain; /* Asegura que la imagen no se deforme */
+}
+
+.tax-img:hover {
+  transform: scale(1.05); /* Efecto de zoom */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .tax-images {
+    flex-wrap: wrap; /* Las imágenes se colocan en filas */
+    gap: 1rem; /* Espaciado más pequeño */
+  }
+
+  .tax-img {
+    width: 100%; /* Las imágenes ocupan el ancho completo del contenedor */
+    max-width: unset; /* Sin límite de tamaño para móviles */
+  }
+}

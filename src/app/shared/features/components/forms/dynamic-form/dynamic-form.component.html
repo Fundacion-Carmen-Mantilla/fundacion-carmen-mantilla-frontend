@@ -1,0 +1,83 @@
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-100 needs-validation"
+    [ngStyle]="{'max-width': (fields.length > 5 ? '600px' : '450px')}" novalidate>
+    <!-- Título del formulario -->
+    <h3 class="text-center mb-4 fw-bold form-title">
+      {{ title }}
+    </h3>
+
+    <!-- Campos dinámicos -->
+    @for (field of fields; track field) {
+      <div class="form-floating mb-4">
+        <!-- Input estándar -->
+        @if (field.type !== 'checkbox' && field.type !== 'select' && field.type !== 'textarea') {
+          <input
+            [type]="field.type"
+            [id]="field.name"
+            [formControlName]="field.name"
+            class="form-control"
+            [placeholder]="field.label"
+            [ngClass]="{ 'is-invalid': form.get(field.name)?.invalid && form.get(field.name)?.touched }"
+            />
+          <label [for]="field.name">{{ field.label }}</label>
+        }
+        <!-- Textarea -->
+        @if (field.type === 'textarea') {
+          <textarea
+            [id]="field.name"
+            [formControlName]="field.name"
+            class="form-control"
+            [placeholder]="field.label"
+            [style.height]="'100px'"
+            [ngClass]="{ 'is-invalid': form.get(field.name)?.invalid && form.get(field.name)?.touched }"
+          ></textarea>
+          <label [for]="field.name">{{ field.label }}</label>
+        }
+        <!-- Select -->
+        @if (field.type === 'select') {
+          <select
+            [id]="field.name"
+            [formControlName]="field.name"
+            class="form-select"
+            [ngClass]="{ 'is-invalid': form.get(field.name)?.invalid && form.get(field.name)?.touched }"
+            >
+            <option value="" disabled selected hidden>Seleccionar...</option>
+            @for (option of field.options; track option) {
+              <option [value]="option.value">{{ option.label }}</option>
+            }
+          </select>
+          <label [for]="field.name">{{ field.label }}</label>
+        }
+        <!-- Checkbox -->
+        @if (field.type === 'checkbox') {
+          <div class="form-check">
+            <input
+              type="checkbox"
+              [id]="field.name"
+              [formControlName]="field.name"
+              class="form-check-input"
+              [ngClass]="{ 'is-invalid': form.get(field.name)?.invalid && form.get(field.name)?.touched }"
+              />
+            <label [for]="field.name" class="form-check-label">{{ field.label }}</label>
+          </div>
+        }
+        <!-- Mensaje de error -->
+        @if (form.get(field.name)?.invalid && form.get(field.name)?.touched) {
+          <div
+            class="invalid-feedback"
+            >
+            {{ field.errorMessage }}
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Botón de guardar con loading -->
+    <app-insert-button
+      [isLoading]="isLoading.getLoading()"
+      label="Guardar"
+      [disabled]="form.invalid"
+      >
+    </app-insert-button>
+  </form>
+</div>

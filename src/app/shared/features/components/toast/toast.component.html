@@ -1,0 +1,43 @@
+<div class="toast-container">
+  @for (toast of toasts; track toast) {
+    <div
+      class="toast-wrapper"
+      role="alert"
+      aria-live="assertive"
+      aria-atomic="true"
+      [ngClass]="getToastClass(toast) + (toast.visible ? ' show' : ' hide')"
+    >
+      <!-- Cabecera del Toast -->
+      <div class="toast-header">
+        <!-- Ícono -->
+        <i
+          class="toast-icon bi"
+          [ngClass]="{
+      'bi-check-circle-fill': toast.type === 'success',
+      'bi-exclamation-circle-fill': toast.type === 'error',
+      'bi-info-circle-fill': toast.type === 'info'
+    }"
+        ></i>
+
+        <!-- Texto del título -->
+        <strong class="me-auto">{{ getTitle(toast.type) }}</strong>
+
+        <!-- Información adicional -->
+        <small>{{ getTimeAgo(toast) }}</small>
+
+        <!-- Botón de cierre -->
+        <button
+          type="button"
+          class="btn-close"
+          aria-label="Cerrar"
+          (click)="hide(toast)"
+        ></button>
+      </div>
+
+      <!-- Cuerpo del Toast -->
+      <div class="toast-body">
+        {{ toast.message }}
+      </div>
+    </div>
+  }
+</div>

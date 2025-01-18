@@ -1,0 +1,225 @@
+/* Contenedor principal para ajustar el padding */
+.home-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Estilo para la imagen destacada */
+.logo-funcarmen {
+  border-radius: 50%; /* Imagen circular */
+  filter: drop-shadow(0 0 8px var(--secondary)); /* Sombra externa que actúa como borde */
+  transition: transform var(--transition-speed) ease-in-out, filter var(--transition-speed) ease-in-out;
+}
+
+.logo-funcarmen:hover {
+  transform: scale(1.05); /* Zoom ligero al pasar el cursor */
+  filter: drop-shadow(0 0 12px rgba(108, 117, 125, 0.9)); /* Simulación del cálculo de color.scale */
+}
+
+/* Títulos del texto */
+h1 {
+  color: var(--primary); /* Azul oscuro */
+  font-size: 2.8rem; /* Tamaño más llamativo */
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 0 rgba(66, 134, 244, 0.7); /* Simulación de color.scale con aclarado */
+}
+
+/* Párrafos descriptivos */
+p.lead {
+  color: var(--dark); /* Texto en gris oscuro */
+  font-size: 1.3rem; /* Más legible y proporcional */
+  line-height: 1.7; /* Mejor lectura con espaciado entre líneas */
+  margin-bottom: 30px; /* Separación con los botones */
+}
+
+/* Botones */
+.btn {
+  font-size: 1.15rem; /* Texto más grande en los botones */
+  padding: 14px 28px; /* Tamaño más llamativo */
+  border-radius: 8px; /* Bordes redondeados suaves */
+  font-weight: bold; /* Letras en negrita */
+  transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+.btn.btn-primary {
+  background-color: var(--primary); /* Azul oscuro */
+  color: var(--light); /* Texto blanco */
+}
+
+.btn.btn-primary:hover {
+  background-color: rgba(66, 134, 244, 0.9); /* Simulación de color.scale */
+  transform: translateY(-2px); /* Levantamiento visual */
+}
+
+.btn.btn-outline-secondary {
+  background-color: transparent;
+  border: 2px solid var(--secondary); /* Contorno azul medio */
+  color: var(--secondary); /* Texto azul medio */
+}
+
+.btn.btn-outline-secondary:hover {
+  background-color: var(--secondary); /* Azul medio de fondo */
+  color: var(--light); /* Texto blanco */
+  transform: translateY(-2px);
+}
+
+/* Contenedor principal */
+.features-container {
+  /* background-color: var(--light); */ /* Fondo claro definido en variables */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 40px 20px; /* Espaciado interno */
+  margin: 20px auto; /* Centrar el contenedor */
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */ /* Sombra ligera */
+}
+
+/* Subtítulo principal (NUESTRA MISIÓN) */
+.features-container span.small {
+  color: var(--dark); /* Color gris oscuro (corrección) */
+  font-size: 14px; /* Texto pequeño */
+  font-weight: 600; /* Negrito moderado */
+  text-transform: uppercase; /* Mayúsculas */
+  letter-spacing: 0.5px; /* Espaciado reducido */
+  display: block;
+  margin-bottom: 15px; /* Separación con el título */
+}
+
+/* Configuración del título principal */
+.features-container h2 {
+  color: var(--primary) !important; /* Azul oscuro */
+  font-size: 2.8rem; /* Tamaño adecuado (consistente con referencia) */
+  font-weight: bold; /* Negrita fuerte */
+  line-height: 1.2; /* Altura de la línea compacta */
+  margin-bottom: 20px; /* Separación inferior */
+  text-shadow: 1px 1px 0 rgba(66, 134, 244, 0.7); /* Reflejo sutil simulado */
+  text-align: center;
+}
+
+/* Párrafo descriptivo */
+.features-container p {
+  color: var(--dark); /* Gris oscuro (consistente con referencia) */
+  font-size: 1.3rem; /* Tamaño del texto */
+  line-height: 1.7; /* Espaciado alto para lectura cómoda */
+  margin: 0 auto 30px; /* Centrado y separación inferior */
+  text-align: center;
+}
+
+/* Configuración de las tarjetas */
+.feature-card {
+  background-color: var(--light); /* Fondo blanco consistente */
+  border-radius: 10px; /* Bordes suaves */
+  padding: 30px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column; /* Ensamblado vertical */
+  justify-content: space-between; /* Asegurar alineación uniforme */
+  align-items: center;
+  text-align: center;
+  height: 100%; /* Alturas uniformes */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra uniforme */
+  transition: transform var(--transition-speed) ease-in-out,
+  box-shadow var(--transition-speed) ease-in-out; /* Transiciones suaves */
+}
+
+/* Hover para las tarjetas */
+.feature-card:hover {
+  transform: translateY(-5px); /* Mover ligeramente hacia arriba */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15); /* Mayor sombra al hover */
+}
+
+/* Títulos en las tarjetas */
+.feature-card h4 {
+  color: var(--secondary) !important; /* Azul medio (corrección requerida) */
+  font-size: 1.8rem; /* Tamaño grande consistente con referencia */
+  font-weight: bold; /* Negrita fuerte */
+  margin-bottom: 15px; /* Espaciado menor */
+  text-shadow: 1px 1px 0 rgba(108, 117, 125, 0.5); /* Simulación del reflejo */
+}
+
+/* Párrafos en las tarjetas */
+.feature-card p {
+  color: var(--dark); /* Gris oscuro para contraste */
+  font-size: 1.1rem; /* Texto más legible */
+  line-height: 1.5; /* Espaciado entre líneas */
+  font-weight: 400; /* Regular */
+  margin: 0 auto; /* Centrado automático */
+  text-align: center;
+}
+
+/* Configuración para las columnas de la fila */
+.row > .col-md-4 {
+  display: flex;
+  flex-direction: column; /* Ensamblaje vertical */
+  margin-bottom: 20px; /* Separación entre columnas */
+}
+
+/* Ajuste responsivo */
+@media (max-width: 768px) {
+  .features-container h2 {
+    font-size: 2.2rem; /* Menor tamaño para pantallas pequeñas */
+  }
+
+  .feature-card {
+    padding: 20px; /* Reducir paddings internos */
+  }
+
+  .feature-card img {
+    width: 70px; /* Imágenes más pequeñas */
+    height: 70px;
+    margin-bottom: 15px;
+  }
+
+  .feature-card h4 {
+    font-size: 1.6rem !important; /* Títulos más pequeños */
+  }
+
+  .feature-card p {
+    font-size: 1rem; /* Reducir textos descriptivos */
+  }
+}
+
+/* partner support */
+.partner-container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  overflow: hidden;
+}
+
+.partner-container .slider {
+  animation: slidein 30s linear infinite;
+  white-space: nowrap;
+}
+
+.partner-container .slider .logos {
+  width: 100%;
+  display: inline-block;
+  margin: 0 0;
+}
+
+.partner-container .slider .logos .carousel-logo {
+  width: calc(100% / 5);
+  animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+.partner-container .slider .logos .carousel-logo:hover {
+  transform: scale(1.15); /* Zoom ligero al pasar el cursor */
+}
+
+/* Animación para el slider */
+@keyframes slidein {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

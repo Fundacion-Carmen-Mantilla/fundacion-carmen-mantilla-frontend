@@ -1,0 +1,77 @@
+/* Imagen circular */
+.founder-image {
+  border-radius: 50%;
+  max-width: 200px;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2)); /* Sombra suave */
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.founder-image:hover {
+  transform: scale(1.1); /* Zoom al pasar el cursor */
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.3)); /* Sombra más pronunciada */
+}
+
+/* Títulos principales */
+.founder-name {
+  color: var(--primary); /* Azul oscuro */
+  font-size: 2.8rem; /* Tamaño más llamativo */
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 0 rgba(180, 213, 255, 1); /* Simulación de color.scale(variables.$primary, $lightness: 40%) */
+}
+
+.founder-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--secondary); /* Azul medio */
+}
+
+/* Texto Base */
+.text-content {
+  font-size: 1.2rem;
+  line-height: 1.75; /* Espaciado amplio para lectura */
+  color: var(--dark); /* Gris oscuro */
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.text-content.lead {
+  font-size: 1.3rem; /* Texto inicial destacado ligeramente más grande */
+  font-weight: bold;
+  color: var(--secondary); /* Azul medio */
+  margin-bottom: 3rem;
+}
+
+/* Títulos de Secciones */
+.section-title {
+  color: var(--primary); /* Azul oscuro */
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 0 rgba(180, 213, 255, 1); /* Simulación de color.scale(variables.$primary, $lightness: 40%) */
+}
+
+/* Ajustes de Respuestas */
+@media (max-width: 768px) {
+  .founder-image {
+    max-width: 150px; /* Reducir tamaño en móviles */
+  }
+
+  .founder-name {
+    font-size: 2rem;
+  }
+
+  .founder-title {
+    font-size: 1.3rem;
+  }
+
+  .text-content {
+    font-size: 1.1rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
