@@ -1,0 +1,25 @@
+/* Sección principal */
+.contact-section {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Texto principal */
+.contact-section h1,
+.contact-section h2,
+.contact-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--primary);
+}
+
+.contact-section p {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+
+/* Formulario */
+.form-container {
+  padding: 0 15px;
+}
+

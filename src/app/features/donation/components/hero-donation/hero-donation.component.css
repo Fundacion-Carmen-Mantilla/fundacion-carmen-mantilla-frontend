@@ -1,0 +1,33 @@
+/* Tamaño personalizado del ícono */
+.icon-lg {
+  font-size: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Títulos principales */
+.container-fluid h1 {
+  font-family: 'Montserrat', sans-serif; /* Fuente elegante y profesional */
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: var(--primary); /* Color principal enfocado en confianza */
+}
+
+/* Texto descriptivo */
+.container-fluid p {
+  font-family: 'Roboto', sans-serif; /* Fuente amigable y accesible */
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+
+/* Botón Donar */
+.btn.bg-custom-danger {
+  background-color: var(--danger); /* Rojo como acción urgente */
+  border: none;
+  font-size: 1.2rem; /* Tamaño del texto del botón */
+  font-weight: bold;
+}
+
+.btn.bg-custom-danger:hover {
+  background-color: var(--warning); /* Marrón para hover */
+  transition: background-color var(--transition-speed);
+}

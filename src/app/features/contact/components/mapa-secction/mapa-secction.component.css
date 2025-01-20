@@ -1,0 +1,81 @@
+/* Estilo de la sección de mapa */
+.container-fluid.bg-dark {
+  padding: 40px 0;
+  background-color: var(--dark); /* Fondo Oscuro */
+}
+
+.container-fluid .col-lg-6 {
+  padding: 15px;
+}
+
+/* Texto en la sección de mapa */
+.container-fluid h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.container-fluid p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+/* Mapa */
+.ratio-16x9 iframe {
+  border: none; /* Eliminar bordes */
+
+  /* Bordes redondeados y sombras adaptativas */
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Espaciado entre líneas */
+.container-fluid .col-12 p {
+  margin-bottom: 10px;
+}
+
+/* Fondo general de la sección */
+.container-fluid.bg-light {
+  padding: 50px 0; /* Espaciado superior/inferior */
+}
+.container-fluid.bg-light h2 {
+  color: var(--primary); /* Título principal en azul oscuro */
+}
+.container-fluid.bg-light h3 {
+  color: var(--secondary); /* Títulos secundarios en azul medio */
+}
+.container-fluid.bg-light p {
+  color: var(--dark); /* Texto general */
+}
+
+/* Enlaces */
+.container-fluid.bg-light a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-speed); /* Transición suave en hover */
+}
+.container-fluid.bg-light a:hover {
+  color: var(--success); /* Verde claro en hover */
+}
+
+/* Map Styling */
+.ratio-16x9 {
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  overflow: hidden; /* Bordes recortados */
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container-fluid.bg-light .px-md-5 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .container-fluid h2, .container-fluid h3 {
+    font-size: 1.2rem; /* Ajustar tamaño del texto en pantallas pequeñas */
+  }
+  .container-fluid p {
+    font-size: 0.9rem;
+  }
+}

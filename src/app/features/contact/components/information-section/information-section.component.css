@@ -1,0 +1,16 @@
+/* Tamaño personalizado para el ícono */
+.icon-lg {
+  font-size: 5rem;
+}
+
+/* Encabezado principal */
+.container-fluid h2 {
+  font-family: 'Montserrat', sans-serif; /* Título claro y amigable */
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Espaciado entre el icono y los textos */
+.lc-block {
+  margin-bottom: 2rem;
+}

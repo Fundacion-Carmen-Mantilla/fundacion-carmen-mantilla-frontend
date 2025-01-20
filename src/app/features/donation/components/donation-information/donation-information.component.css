@@ -1,0 +1,50 @@
+/* Íconos personalizados */
+.icon-lg {
+  font-size: 3rem;
+}
+
+/* Espaciado entre filas */
+.row.gy-4 {
+  row-gap: 1.5rem; /* Espaciado vertical entre tarjetas */
+}
+
+/* Animación al pasar el mouse sobre las cards */
+.animation-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animation-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Cards: Consistencia de tamaño */
+.card {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Asegurar alturas idénticas */
+}
+
+.card h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+}
+
+.card > p {
+  flex-grow: 1; /* Hace que las cards mantengan una alineación en el contenido */
+}
+
+/* Botón principal */
+.btn.bg-custom-danger {
+  background-color: var(--danger);
+  border: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.btn.bg-custom-danger:hover {
+  background-color: var(--warning);
+  transition: background-color var(--transition-speed);
+}
