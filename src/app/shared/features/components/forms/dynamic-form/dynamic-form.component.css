@@ -1,5 +1,4 @@
 .container {
-  background-color: var(--light);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -57,11 +56,15 @@
   background-color: rgba(44, 76, 88, 0.85); /* Ajustado manualmente, basado en el cálculo de `color.scale` */
 }
 
-.container form button:disabled {
-  background-color: var(--secondary);
-  cursor: not-allowed;
-}
+/*.container form button:disabled {*/
+/*  background-color: var(--secondary);*/
+/*  cursor: not-allowed;*/
+/*}*/
 
 h3.form-title {
   color: var(--primary);
+}
+
+textarea {
+  resize: none;
 }

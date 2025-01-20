@@ -2,6 +2,8 @@ import {Routes} from '@angular/router';
 import {HomePageComponent} from './features/home/pages/home-page/home-page.component';
 import {AboutUsComponent} from './features/about-us/pages/about-us/about-us.component';
 import {LoginPageComponent} from './features/auth/pages/login-page/login-page.component';
+import {ContactPageComponent} from './features/contact/pages/contact-page/contact-page.component';
+import {DonationPageComponent} from './features/donation/pages/donation-page/donation-page.component';
 
 export const routes: Routes = [
   {
@@ -23,5 +25,15 @@ export const routes: Routes = [
     path: 'auth/portal/login',
     title: 'Fundación Carmen Mantilla - Iniciar Sesión',
     component: LoginPageComponent
+  },
+  {
+    path: 'contacto',
+    title: 'Fundación Carmen Mantilla - Contacto',
+    component: ContactPageComponent
+  },
+  {
+    path: 'donacion',
+    title: 'Fundación Carmen Mantilla - Donación',
+    component: DonationPageComponent
   }
 ];

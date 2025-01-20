@@ -21,6 +21,7 @@ export class DynamicFormComponent implements OnInit {
   @Output() formSubmit = new EventEmitter<Record<string, any>>(); // Enviar los valores del formulario
   @Input() title: string = 'Formulario Dinámico';
   @Input() isLoading = inject(LoadingService); // Obtener el estado de carga
+  @Input() buttonText: string = 'Guardar'; // Definir el texto del botón
   fb: FormBuilder = inject(FormBuilder);
   form: FormGroup = this.fb.group({});
 

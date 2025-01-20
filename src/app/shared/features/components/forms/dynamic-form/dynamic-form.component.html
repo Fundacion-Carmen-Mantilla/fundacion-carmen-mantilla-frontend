@@ -1,4 +1,4 @@
-<div class="container d-flex align-items-center justify-content-center min-vh-100">
+<div class="container d-flex align-items-center justify-content-center">
   <form [formGroup]="form" (ngSubmit)="onSubmit()" class="w-100 needs-validation"
     [ngStyle]="{'max-width': (fields.length > 5 ? '600px' : '450px')}" novalidate>
     <!-- Título del formulario -->
@@ -75,7 +75,7 @@
     <!-- Botón de guardar con loading -->
     <app-insert-button
       [isLoading]="isLoading.getLoading()"
-      label="Guardar"
+      [label]="buttonText"
       [disabled]="form.invalid"
       >
     </app-insert-button>

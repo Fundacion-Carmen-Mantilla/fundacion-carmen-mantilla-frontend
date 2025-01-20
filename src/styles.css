@@ -36,3 +36,82 @@
   --toast-info-bg: var(--soft-blue); /* Fondo para toasts de info */
   --toast-warning-bg: var(--soft-brown); /* Fondo para toasts de advertencia */
 }
+
+/* Aplicar fuentes globalmente */
+body {
+  font-family: 'Roboto', sans-serif; /* Fuente para los párrafos (predeterminada) */
+  color: var(--dark);
+  background-color: var(--light);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif; /* Fuente para los títulos */
+  color: var(--primary); /* Títulos con el color principal */
+}
+
+p {
+  line-height: 1.6; /* Aumentar el espaciado entre líneas para mayor legibilidad */
+}
+
+a {
+  font-family: 'Roboto', sans-serif; /* Fuente Roboto para los enlaces */
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--success); /* Cambiar color al pasar el cursor sobre enlaces */
+}
+
+
+.text-custom-primary {
+  color: var(--primary);
+}
+
+.text-custom-secondary {
+  color: var(--secondary);
+}
+
+.text-custom-success {
+  color: var(--success);
+}
+
+.text-custom-danger {
+  color: var(--danger);
+}
+
+.text-custom-light {
+  color: var(--light);
+}
+
+.text-custom-dark {
+  color: var(--dark);
+}
+
+/* Clases de fondo personalizadas */
+.bg-custom-primary {
+  background-color: var(--primary);
+}
+
+.bg-custom-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-custom-success {
+  background-color: var(--success);
+}
+
+.bg-custom-danger {
+  background-color: var(--danger);
+}
+
+.bg-custom-light {
+  background-color: var(--light);
+}
+
+.bg-custom-dark {
+  background-color: var(--dark);
+}
