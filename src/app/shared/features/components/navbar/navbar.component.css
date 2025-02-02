@@ -59,7 +59,7 @@
 /* Estilos para la tarjeta */
 .card {
   background-color: var(--primary); /* Fondo de la tarjeta */
-  border-color: var(--secondary); /* Borde de la tarjeta */
+  border: none;
 }
 
 .card-body {
