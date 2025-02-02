@@ -1,60 +1,184 @@
-<!-- menu.component.html -->
-<nav class="navbar navbar-expand-lg navbar-light shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow py-3">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbar-content" aria-controls="navbar-content"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-content">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbar-content">
-      <ul class="navbar-nav mx-auto">
-        @for (menuItem of menuItems; track menuItem) {
-          <li class="nav-item" [ngClass]="{ 'dropdown': menuItem.items?.length }">
-            @if (!menuItem.items?.length) {
-              <a class="nav-link" [routerLink]="menuItem.url" [attr.target]="menuItem.target">
-                {{ menuItem.label }}
-              </a>
-            } @else {
-              <a class="nav-link dropdown-toggle" href="#" role="button"
-                 (click)="toggleDropdown($event, 0)">
-                {{ menuItem.label }}
-              </a>
-              <ul class="dropdown-menu">
-                <ng-container *ngTemplateOutlet="menuLevel; context: {
-                  $implicit: menuItem.items,
-                  level: 1
-                }">
-                </ng-container>
-              </ul>
-            }
-          </li>
-        }
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <!-- Home -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/home'" routerLinkActive="active" aria-current="page">Home</a>
+        </li>
+        <!-- Sobre Nosotros -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/about-us'" routerLinkActive="active" aria-current="page">Sobre Nosotros</a>
+        </li>
+        <!-- Desarrollo Cultural -->
+        <li class="nav-item dropdown dropdown-mega position-static">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Desarrollo Cultural</a>
+          <div class="dropdown-menu shadow">
+            <div class="mega-content px-4">
+              <div class="container-fluid">
+                <div class="row">
+                  <!-- Ministerio de Cultura -->
+                  <div class="col-12 col-sm-4 col-md-3 py-4">
+                    <h5>{{ ministerioCulture[0].label }}</h5>
+                    <div class="list-group">
+                      <div class="accordion accordion-flush" id="accordionFlushMinisterioCultura">
+                        @for (year of ministerioCulture[0].items; track year; let i = $index) {
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      [attr.data-bs-target]="'#flush-collapse' + i" aria-expanded="false"
+                                      [attr.aria-controls]="'flush-collapse' + i">
+                                {{ year.label }}
+                              </button>
+                            </h2>
+                            <div [id]="'flush-collapse' + i" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionFlushMinisterioCultura">
+                              <div class="accordion-body">
+                                <div class="list-group">
+                                  @for (project of year.items; track project) {
+                                    <a [routerLink]="project.url" class="list-group-item list-group-item-action"
+                                       routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                      {{ project.label }}
+                                    </a>
+                                    @for (detail of project.items; track detail) {
+                                      <a [routerLink]="detail.url" class="list-group-item list-group-item-action ps-4"
+                                         routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                                         [attr.target]="detail.target || '_self'">
+                                        {{ detail.label }}
+                                      </a>
+                                    }
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Gobernación del Magdalena -->
+                  <div class="col-12 col-sm-4 col-md-3 py-4">
+                    <h5>{{ gobernacionMagdalena[0].label }}</h5>
+                    <div class="list-group">
+                      <div class="accordion accordion-flush" id="accordionFlushGobernacionMagdalena">
+                        @for (year of gobernacionMagdalena[0].items; track year; let i = $index) {
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      [attr.data-bs-target]="'#flush-collapse-gm-' + i" aria-expanded="false"
+                                      [attr.aria-controls]="'flush-collapse-gm-' + i">
+                                {{ year.label }}
+                              </button>
+                            </h2>
+                            <div [id]="'flush-collapse-gm-' + i" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionFlushGobernacionMagdalena">
+                              <div class="accordion-body">
+                                <div class="list-group">
+                                  @for (project of year.items; track project) {
+                                    <a [routerLink]="project.url" class="list-group-item list-group-item-action"
+                                       routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                      {{ project.label }}
+                                    </a>
+                                    @for (detail of project.items; track detail) {
+                                      <a [routerLink]="detail.url" class="list-group-item list-group-item-action ps-4"
+                                         routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                                         [attr.target]="detail.target || '_self'">
+                                        {{ detail.label }}
+                                      </a>
+                                    }
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Danza por Parejas -->
+                  <div class="col-12 col-sm-4 col-md-3 py-4">
+                    <h5>{{ danzaParejas[0].label }}</h5>
+                    <div class="list-group">
+                      <div class="accordion accordion-flush" id="accordionDanzaParejas">
+                        @for (item of danzaParejas[0].items; track item; let i = $index) {
+                          <div class="accordion-item">
+                            <h2 class="accordion-header">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                      [attr.data-bs-target]="'#flush-collapse-dp-' + i" aria-expanded="false"
+                                      [attr.aria-controls]="'flush-collapse-dp-' + i">
+                                {{ item.label }}
+                              </button>
+                            </h2>
+                            <div [id]="'flush-collapse-dp-' + i" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordionDanzaParejas">
+                              <div class="accordion-body">
+                                <div class="list-group">
+                                  <a [routerLink]="item.url" class="list-group-item list-group-item-action"
+                                     routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                                    {{ item.label }}
+                                  </a>
+                                  @for (detail of item.items; track detail) {
+                                    <a [routerLink]="detail.url" class="list-group-item list-group-item-action ps-4"
+                                       routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                                       [attr.target]="detail.target || '_self'">
+                                      {{ detail.label }}
+                                    </a>
+                                  }
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        }
+                      </div>
+                    </div>
+                  </div>
+                  <!-- No Additional CSS -->
+                  <div class="col-12 col-sm-4 col-md-3 py-4">
+                    <h5>No Additional CSS</h5>
+                    <div class="card">
+                      <img
+                        src="https://images.unsplash.com/photo-1509599589979-3b5a15d2816e?crop=entropy&amp;cs=tinysrgb&amp;fit=crop&amp;fm=jpg&amp;ixid=MnwzNzg0fDB8MXxzZWFyY2h8NDR8fGZvcmVzdHxlbnwwfDB8fHwxNjM0OTkxMjA3&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080&amp;h=768"
+                        class="img-fluid" alt="image">
+                      <div class="card-body">
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                          content.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Multimedia -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/multimedia'" routerLinkActive="active">Multimedia</a>
+        </li>
+        <!-- Nuestra academia -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/academia'" routerLinkActive="active">Nuestra academia</a>
+        </li>
+        <!-- Guía Espiritual -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">Guía Espiritual</a>
+          <ul class="dropdown-menu shadow">
+            <li><a class="dropdown-item" [routerLink]="'/reflexiones'" routerLinkActive="active">Reflexiones</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/oraciones'" routerLinkActive="active">Oraciones</a></li>
+            <li><a class="dropdown-item" [routerLink]="'/santo-rosario'" routerLinkActive="active">Santo Rosario</a></li>
+          </ul>
+        </li>
+        <!-- Apoya Nuestra Causa -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/apoya'" routerLinkActive="active">Apoya Nuestra Causa</a>
+        </li>
+        <!-- Contáctanos -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="'/contacto'" routerLinkActive="active">Contáctanos</a>
+        </li>
       </ul>
     </div>
   </div>
 </nav>
-
-<ng-template #menuLevel let-items let-level="level">
-  @for (item of items; track item) {
-    <li [ngClass]="{ 'dropdown-submenu': item.items?.length }">
-      @if (!item.items?.length) {
-        <a class="dropdown-item" [routerLink]="item.url" [attr.target]="item.target">
-          {{ item.label }}
-        </a>
-      } @else {
-        <a class="dropdown-item dropdown-toggle" href="#"
-           (click)="toggleDropdown($event, level)">
-          {{ item.label }}
-        </a>
-        <ul class="dropdown-menu">
-          <ng-container *ngTemplateOutlet="menuLevel; context: {
-            $implicit: item.items,
-            level: level + 1
-          }">
-          </ng-container>
-        </ul>
-      }
-    </li>
-  }
-</ng-template>
