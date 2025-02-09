@@ -170,11 +170,29 @@
         </li>
         <!-- Apoya Nuestra Causa -->
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="'/apoya'" routerLinkActive="active">Apoya Nuestra Causa</a>
+          <a class="nav-link" [routerLink]="'/donation'" routerLinkActive="active">Apoya Nuestra Causa</a>
         </li>
         <!-- Contáctanos -->
         <li class="nav-item">
           <a class="nav-link" [routerLink]="'/contacto'" routerLinkActive="active">Contáctanos</a>
+        </li>
+      </ul>
+      <!-- Dropdown de usuario alineado a la derecha -->
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item dropdown">
+          <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown"
+             aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end text-small shadow">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
         </li>
       </ul>
     </div>
