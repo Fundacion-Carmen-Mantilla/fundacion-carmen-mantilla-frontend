@@ -17,7 +17,7 @@ export const routes: Routes = [
     component: HomePageComponent
   },
   {
-    path: 'quienes-somos', // Ruta para Nosotros
+    path: 'about-us', // Ruta para Nosotros
     title: 'Fundación Carmen Mantilla - Sobre Nosotros',
     component: AboutUsComponent
   },
@@ -32,7 +32,7 @@ export const routes: Routes = [
     component: ContactPageComponent
   },
   {
-    path: 'donacion',
+    path: 'donation',
     title: 'Fundación Carmen Mantilla - Donación',
     component: DonationPageComponent
   }
