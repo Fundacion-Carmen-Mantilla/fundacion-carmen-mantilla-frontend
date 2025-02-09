@@ -1,6 +1,38 @@
-<app-dynamic-form
-  [fields]="formFields"
-  (formSubmit)="handleSubmit($event)"
-  [title]="'Iniciar Sesión'"
-  [isLoading]="isLoading"
-></app-dynamic-form>
+<div class="login-wrapper bg-light">
+  <div class="container">
+    <div class="row justify-content-center align-items-center vh-100">
+      <div class="col-12 col-md-10 col-lg-6">
+        <div class="login-card card border-0 shadow-lg rounded-4 overflow-hidden">
+          <div class="card-header bg-custom-primary text-white text-center py-4">
+            <div class="d-flex align-items-center justify-content-center">
+              <i class="bi bi-shield-lock-fill me-3 fs-2"></i>
+              <h2 class="mb-0 fw-bold text-white">Iniciar Sesión</h2>
+            </div>
+          </div>
+
+          <div class="card-body p-5 position-relative">
+            <!-- Fondo abstracto sutíl -->
+            <div class="login-bg-overlay"></div>
+
+            <app-dynamic-form
+              [fields]="formFields"
+              (formSubmit)="handleSubmit($event)"
+              [title]="''"
+              [isLoading]="isLoading"
+              [buttonText]="'Iniciar Sesión'"
+              class="w-100 position-relative z-1"
+            ></app-dynamic-form>
+          </div>
+
+          <div class="card-footer bg-light py-3">
+            <div class="d-flex justify-content-between align-items-center px-4">
+              <a href="#" class="text-custom-secondary text-decoration-none">
+                <small>¿Olvidaste tu contraseña?</small>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
