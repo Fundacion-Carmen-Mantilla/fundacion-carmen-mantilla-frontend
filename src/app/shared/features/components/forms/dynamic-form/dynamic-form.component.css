@@ -56,11 +56,6 @@
   background-color: rgba(44, 76, 88, 0.85); /* Ajustado manualmente, basado en el cálculo de `color.scale` */
 }
 
-/*.container form button:disabled {*/
-/*  background-color: var(--secondary);*/
-/*  cursor: not-allowed;*/
-/*}*/
-
 h3.form-title {
   color: var(--primary);
 }
