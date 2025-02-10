@@ -1,0 +1,25 @@
+<div class="mission-container container py-5">
+  <div class="mission-header text-center mb-5">
+    <span class="mission-subtitle">NUESTRA MISIÓN</span>
+    <h2 class="mission-title">Transformamos realidades con fe y esperanza</h2>
+    <p class="mission-description">
+      La Fundación Carmen Mantilla nació para servir, inspirada en el legado de su fundadora y en su incansable amor por los más
+      necesitados. Trabajamos para mejorar la calidad de vida de comunidades vulnerables a través de proyectos sociales, culturales,
+      ambientales, educativos y espirituales.
+    </p>
+  </div>
+
+  <div class="mission-grid">
+    @for (mission of missions; track mission) {
+      <div class="mission-card">
+        <div class="mission-card-content">
+          <div class="mission-card-icon">
+            <i [class]="mission.icon"></i>
+          </div>
+          <h4 class="mission-card-title">{{ mission.title }}</h4>
+          <p class="mission-card-description">{{ mission.description }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
