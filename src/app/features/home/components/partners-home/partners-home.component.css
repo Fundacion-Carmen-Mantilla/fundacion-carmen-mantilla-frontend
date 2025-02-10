@@ -1,0 +1,96 @@
+.partners-section {
+  background-color: var(--light);
+  overflow: hidden;
+}
+
+.partners-header {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.partners-subtitle {
+  display: block;
+  color: var(--secondary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.partners-title {
+  color: var(--primary);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.partners-description {
+  color: var(--dark);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.partners-loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.carousel-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  max-height: 100px;
+}
+
+.carousel-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+.partners-section .slider {
+  animation: slidein 30s linear infinite;
+  white-space: nowrap;
+}
+
+.partners-section .slider .logos {
+  width: 100%;
+  display: inline-block;
+  margin: 0 0;
+}
+
+.partners-section .slider .logos .carousel-logo {
+  width: calc(100% / 5);
+  animation: fade-in 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+
+}
+
+.partners-section .slider .logos .carousel-logo:hover {
+  transform: scale(1.15); /* Zoom ligero al pasar el cursor */
+}
+
+/* Animación para el slider */
+@keyframes slidein {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

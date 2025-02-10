@@ -1,0 +1,42 @@
+<div class="partners-section container col-xxl-8 px-4 py-5 text-center">
+  <span class="partners-subtitle">NUESTROS ALIADOS</span>
+  <h2 class="partners-title">Colaboradores que Transforman Vidas</h2>
+  <p class="partners-description">
+    Cada alianza es un paso más hacia nuestra misión. Gracias al apoyo de estas instituciones,
+    podemos extender nuestra labor social, llevando esperanza, educación y oportunidades
+    a comunidades que más lo necesitan.
+  </p>
+
+  <!-- Contenedor del carrusel -->
+  @if (partners$ | async; as partners) {
+    <div class="slider">
+      <div class="logos">
+        @for (partner of partners; track partner) {
+          <img
+            [src]="partner.logo"
+            [alt]="partner.name"
+            class="img-fluid carousel-logo mx-3"
+            [title]="partner.name"
+          />
+        }
+      </div>
+      <div class="logos">
+        @for (partner of partners; track partner) {
+          <img
+            [src]="partner.logo"
+            [alt]="partner.name"
+            class="img-fluid carousel-logo mx-3"
+            [title]="partner.name"
+          />
+        }
+      </div>
+    </div>
+  } @else {
+    <div class="partners-loader text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Cargando colaboradores...</span>
+      </div>
+    </div>
+  }
+
+</div>
