@@ -1,0 +1,40 @@
+<div class="news-section container-fluid py-5">
+  <div class="container">
+    <div class="news-header text-center mb-5">
+      <span class="news-subtitle">INFORMACIÓN RELEVANTE</span>
+      <h2 class="news-title">Noticias que Transforman</h2>
+      <p class="news-description">
+        Mantente informado sobre los acontecimientos más significativos que impulsan
+        el cambio social, la innovación y el progreso de nuestras comunidades.
+        Cada noticia es un reflejo de nuestro compromiso con la transparencia y el impacto positivo.
+      </p>
+    </div>
+
+    <div class="news-list">
+      @for (noticia of noticias$ | async; track noticia) {
+        <div class="news-card" (click)="navigateToNoticia(noticia.id)">
+          <div class="news-card-image">
+            <img
+              [src]="noticia.imagen"
+              [alt]="noticia.titulo"
+              loading="lazy"
+            >
+            <div class="news-card-date">
+              {{ noticia.fecha | date:'MMM d' }}
+            </div>
+          </div>
+          <div class="news-card-content">
+            <h4 class="news-card-title">{{ noticia.titulo }}</h4>
+            <p class="news-card-excerpt">{{ noticia.resumen }}</p>
+            <div class="news-card-footer">
+              <span class="news-card-source">
+                <i class="bi bi-broadcast"></i> Fuente
+              </span>
+              <a href="#" class="news-card-link">Ver noticia</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
