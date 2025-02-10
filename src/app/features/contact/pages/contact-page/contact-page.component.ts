@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, ViewChild} from '@angular/core';
 import {DynamicFormField} from '../../../../core/models/dynamic-form.interface';
 import {DynamicFormComponent} from '../../../../shared/features/components/forms/dynamic-form/dynamic-form.component';
 import {LoadingService} from '../../../../core/services/loading.service';
@@ -19,36 +19,49 @@ import {ToastService} from '../../../../shared/features/services/toast.service';
   styleUrl: './contact-page.component.css'
 })
 export class ContactPageComponent {
+  @ViewChild(DynamicFormComponent) dynamicFormComponent!: DynamicFormComponent;
+
   formFields: DynamicFormField[] = [
     {
       name: 'names',
       label: 'Nombres completos',
       type: 'text',
       required: true,
-      errorMessage: 'Por favor, ingresa tus nombres completos.'
+      placeholder: 'Ingresa tus nombres completos',
+      minLength: 3,
+      maxLength: 50,
+      errorMessage: 'Nombres inválidos'
     },
     {
       name: 'email',
       label: 'Correo Electrónico',
       type: 'email',
       required: true,
-      errorMessage: 'Por favor, ingresa un correo electrónico válido.'
+      placeholder: 'ejemplo@dominio.com',
+      errorMessage: 'Correo electrónico inválido'
     },
     {
       name: 'subject',
       label: 'Asunto',
       type: 'text',
       required: true,
-      errorMessage: 'Por favor, ingresa el asunto del mensaje.'
+      placeholder: 'Motivo de tu contacto',
+      minLength: 3,
+      maxLength: 100,
+      errorMessage: 'Asunto inválido'
     },
     {
       name: 'message',
       label: 'Mensaje',
       type: 'textarea',
       required: true,
-      errorMessage: 'El mensaje debe contener al menos 6 caracteres.'
+      placeholder: 'Escribe tu mensaje aquí...',
+      minLength: 10,
+      maxLength: 500,
+      errorMessage: 'Mensaje debe tener entre 10 y 500 caracteres'
     }
   ];
+
 
   isLoading: LoadingService = inject(LoadingService);
   contactService: ContactService = inject(ContactService);
@@ -65,8 +78,12 @@ export class ContactPageComponent {
       next: (response) => {
         this.toastService.success(response.message);
       },
+      error: (error) => {
+        this.toastService.error('Error al enviar el formulario');
+      },
       complete: () => {
         this.isLoading.stopLoading();
+        this.dynamicFormComponent.resetForm();
       }
     });
   }

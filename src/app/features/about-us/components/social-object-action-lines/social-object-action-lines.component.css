@@ -1,65 +1,90 @@
-/* Títulos principales */
-.main-title {
-  font-size: 2.4rem;
-  font-weight: bold;
+/* social-object-action-lines.component.css */
+:root {
+  --primary-gradient: linear-gradient(
+    135deg,
+    var(--color-darkblue) 0%,
+    var(--color-midblue) 100%
+  );
+}
+
+.social-object-container {
+  background-color: var(--light);
+  padding: 4rem 0;
+}
+
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  color: var(--color-darkblue);
+  font-weight: 700;
   text-transform: uppercase;
-  color: var(--primary); /* Azul Oscuro */
+  letter-spacing: 2px;
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: var(--secondary); /* Azul Medio */
-  font-weight: 500;
-  margin-top: 10px;
-}
-
-/* Cards Uniformes */
-.card {
-  border: none;
-  background-color: var(--light); /* Fondo claro */
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  height: 100%; /* Asegura altura uniforme para todas las tarjetas */
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-
-.card:hover {
-  transform: translateY(-5px); /* Suave elevación en hover */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Sombra más marcada */
-}
-
-.card .card-title {
-  color: var(--primary); /* Azul Oscuro */
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.card .card-text {
-  color: var(--dark); /* Gris oscuro */
-  text-align: justify;
-  line-height: 1.6;
+.section-subtitle {
+  color: var(--color-midblue);
   font-size: 1.1rem;
 }
 
-/* Grid: Espaciado y Organización */
-.row.g-4 > [class*="col-"] {
-  display: flex;
-  flex-direction: column; /* Asegura que las tarjetas ocupen todo el espacio disponible */
+.objectives-grid,
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
-/* Diseño Responsivo */
-@media (max-width: 768px) {
-  .card {
-    padding: 1rem;
-  }
+.objective-card,
+.action-card {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(44, 92, 139, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
 
-  .card-title {
-    font-size: 1.2rem;
-  }
+.objective-card:hover,
+.action-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(44, 92, 139, 0.15);
+}
 
-  .card-text {
-    font-size: 1rem;
+.card-icon {
+  background: var(--primary-gradient);
+  color: var(--color-darkblue);
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-title {
+  color: var(--color-darkblue);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.card-description {
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .objectives-grid,
+  .action-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .objectives-grid,
+  .action-grid {
+    grid-template-columns: 1fr;
   }
 }

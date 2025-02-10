@@ -1,21 +1,27 @@
-<div class="page-container">
-  <div class="container py-5">
-    <!-- Título Principal -->
-    <div class="row text-center mb-5">
-      <div class="col">
-        <h1 class="main-title">Valores y Políticas Corporativas</h1>
-        <p class="subtitle">Los pilares fundamentales que nos guían hacia el crecimiento y el bienestar comunitario</p>
-      </div>
+<!-- values-and-policies.component.html -->
+<div class="values-container">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Nuestros Valores Corporativos</h2>
+      <p class="section-subtitle">Principios que guían nuestra misión y visión</p>
     </div>
 
-    <!-- Cuadrícula de Valores -->
-    <div class="row row-cols-2 row-cols-md-4 g-4 justify-content-center">
-      @for (value of valuesList; track value) {
-        <div class="col">
-          <div class="card value-card text-center">
-            <div class="card-body d-flex align-items-center justify-content-center">
-              <h5 class="card-title">{{ value }}</h5>
+    <div class="values-grid">
+      @for (group of valueGroups; track group.title) {
+        <div class="value-card">
+          <div class="value-card-header">
+            <div class="value-card-title-group">
+              <h3 class="value-card-title">{{ group.title }}</h3>
+              <p class="value-card-description">{{ group.description }}</p>
             </div>
+          </div>
+          <div class="value-card-body">
+            @for (value of group.values; track value) {
+              <div class="value-item">
+                <span class="value-item-dot"></span>
+                <span class="value-item-text">{{ value }}</span>
+              </div>
+            }
           </div>
         </div>
       }

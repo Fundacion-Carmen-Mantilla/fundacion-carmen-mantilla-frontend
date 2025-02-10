@@ -1,113 +1,47 @@
-<div class="container py-5">
-  <!-- Título Principal -->
-  <div class="row text-center mb-5">
-    <div class="col">
-      <h1 class="main-title">Objeto Social</h1>
-      <p class="subtitle">Acciones para el bienestar integral de nuestra comunidad</p>
-    </div>
-  </div>
-
-  <!-- Tarjetas del Objeto Social -->
-  <div class="row g-4">
-    <!-- Tarjeta 1 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Proyectos Sociales</h5>
-          <p class="card-text">Proyectos enfocados en ayudar a familias vulnerables y personas necesitadas, especialmente niños, tercera edad y personas discapacitadas.</p>
-        </div>
+<div class="social-object-container">
+  <div class="container">
+    <!-- Objeto Social -->
+    <section class="social-objectives">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Objeto Social</h2>
+        <p class="section-subtitle">Transformando vidas con amor y compromiso</p>
       </div>
-    </div>
 
-    <!-- Tarjeta 2 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Ayudas Básicas</h5>
-          <p class="card-text">Proporcionar alimentos, salud, educación y vivienda a personas en condiciones de vulnerabilidad extrema.</p>
-        </div>
+      <div class="objectives-grid">
+        @for (objective of socialObjectives; track objective) {
+          <div class="objective-card">
+            <div class="card-icon">
+              <i [class]="objective.icon"></i>
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">{{ objective.title }}</h4>
+              <p class="card-description">{{ objective.description }}</p>
+            </div>
+          </div>
+        }
       </div>
-    </div>
+    </section>
 
-    <!-- Tarjeta 3 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Capacitación</h5>
-          <p class="card-text">Capacitar a madres y padres cabeza de hogar para crear microempresas y generar ingresos sostenibles.</p>
-        </div>
+    <!-- Líneas de Acción -->
+    <section class="action-lines mt-5">
+      <div class="section-header text-center mb-5">
+        <h2 class="section-title">Líneas de Acción</h2>
+        <p class="section-subtitle">Impulsando el cambio social</p>
       </div>
-    </div>
 
-    <!-- Tarjeta 4 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Fomento Cultural</h5>
-          <p class="card-text">Crear, explorar y apoyar talentos artísticos, deportivos y culturales en niños y jóvenes.</p>
-        </div>
+      <div class="action-grid">
+        @for (action of actionLines; track action) {
+          <div class="action-card">
+            <div class="card-icon">
+              <i [class]="action.icon"></i>
+            </div>
+            <div class="card-content">
+              <h4 class="card-title">{{ action.title }}</h4>
+              <p class="card-description">{{ action.description }}</p>
+            </div>
+          </div>
+        }
       </div>
-    </div>
-
-    <!-- Tarjeta 5 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Proyectos Ambientales</h5>
-          <p class="card-text">Llevar a cabo proyectos ambientales e institucionales para mejorar la calidad de vida de las comunidades.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Tarjeta 6 -->
-    <div class="col-md-4">
-      <div class="card objective-card">
-        <div class="card-body">
-          <h5 class="card-title">Orientación Espiritual</h5>
-          <p class="card-text">Proveer orientación espiritual y profesional para personas afectadas emocionalmente.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Título de Líneas de Acción -->
-  <div class="row text-center mt-5 mb-5">
-    <div class="col">
-      <h2 class="main-title">Líneas de Acción</h2>
-      <p class="subtitle">Impacto social con inclusión y equidad</p>
-    </div>
-  </div>
-
-  <!-- Tarjetas de Líneas de Acción -->
-  <div class="row g-4">
-    <!-- Tarjeta Línea de Acción 1 -->
-    <div class="col-md-4">
-      <div class="card action-line-card">
-        <div class="card-body">
-          <h5 class="card-title">Capacitación</h5>
-          <p class="card-text">Capacitación en modistería, cultivos, pesca, artesanía y emprendimiento enfocado al crecimiento laboral.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Línea de Acción 2 -->
-    <div class="col-md-4">
-      <div class="card action-line-card">
-        <div class="card-body">
-          <h5 class="card-title">Donaciones</h5>
-          <p class="card-text">Entrega de alimentos, juguetes, útiles escolares y asistencia para cubrir necesidades básicas.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Línea de Acción 3 -->
-    <div class="col-md-4">
-      <div class="card action-line-card">
-        <div class="card-body">
-          <h5 class="card-title">Apoyo Cultural</h5>
-          <p class="card-text">Apoyo al deporte, recreación con películas educativas y actividades para el desarrollo de la cultura.</p>
-        </div>
-      </div>
-    </div>
+    </section>
   </div>
 </div>

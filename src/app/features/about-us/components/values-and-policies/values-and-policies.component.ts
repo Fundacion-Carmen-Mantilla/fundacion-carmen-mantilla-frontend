@@ -8,30 +8,59 @@ import {Component} from '@angular/core';
   styleUrl: './values-and-policies.component.css'
 })
 export class ValuesAndPoliciesComponent {
-  valuesList: string[] = [
-    'Amor',
-    'Respeto',
-    'Compromiso',
-    'Responsabilidad',
-    'Honestidad',
-    'Humildad',
-    'Ética',
-    'Solidaridad',
-    'Optimismo',
-    'Paz',
-    'Sensibilidad',
-    'Paciencia',
-    'Espíritu comunitario',
-    'Confianza',
-    'Equidad e Igualdad',
-    'Amabilidad',
-    'Empatía',
-    'Servicio',
-    'Eficiencia',
-    'Innovación',
-    'Calidad humana',
-    'Trabajo en equipo',
-    'Actitud de servicio',
-    'Sentido de pertenencia',
+  valueGroups = [
+    {
+      icon: 'bi-heart-pulse',
+      color: 'text-danger',
+      title: 'Valores Humanos y Éticos',
+      description: 'Principios fundamentales que nos definen',
+      values: [
+        'Amor',
+        'Respeto',
+        'Honestidad',
+        'Integridad',
+        'Humildad',
+        'Ética',
+        'Compromiso',
+        'Responsabilidad',
+        'Amabilidad',
+        'Empatía',
+        'Sensibilidad',
+        'Calidad Humana'
+      ]
+    },
+    {
+      icon: 'bi-shield-check',
+      color: 'text-primary',
+      title: 'Valores Sociales y Comunitarios',
+      description: 'Nuestro impacto y conexión con la comunidad',
+      values: [
+        'Solidaridad',
+        'Espíritu Comunitario',
+        'Equidad e Igualdad',
+        'Servicio',
+        'Actitud de Servicio',
+        'Confianza',
+        'Paz',
+        'Sentido de Pertenencia'
+      ]
+    },
+    {
+      icon: 'bi-rocket-takeoff',
+      color: 'text-success',
+      title: 'Valores Organizacionales y de Desarrollo',
+      description: 'Nuestra visión de crecimiento y excelencia',
+      values: [
+        'Innovación',
+        'Trabajo en Equipo',
+        'Eficiencia',
+        'Optimismo',
+        'Paciencia',
+        'Calidad',
+        'Mejora Continua',
+        'Adaptabilidad'
+      ]
+    }
   ];
+
 }

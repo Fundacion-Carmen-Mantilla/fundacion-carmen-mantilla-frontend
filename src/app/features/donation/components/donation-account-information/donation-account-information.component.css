@@ -1,37 +1,110 @@
-/* Títulos secundarios */
-.info-block h2 {
-  color: var(--primary); /* Azul oscuro */
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 15px;
+:root {
+  --card-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-/* Espaciado entre bloques de información */
-.info-block {
-  margin-bottom: 40px; /* Espaciado entre bloques para un diseño limpio */
+.donation-account-container {
+  background-color: var(--light);
 }
 
-/* Subrayar elementos importantes */
-.info-block p {
-  margin-bottom: 20px;
+.donation-card {
+  border: none;
+  border-radius: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: var(--card-transition);
 }
 
-.info-block p.fs-5 {
-  font-size: 1.25rem;
-  color: var(--dark); /* Gris oscuro */
+.donation-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.info-block p.lead {
-  line-height: 1.7;
+.icon-lg {
+  font-size: 3rem;
+  opacity: 0.8;
+  transition: var(--card-transition);
 }
 
-.info-block p strong {
-  color: var(--primary); /* Azul oscuro resalta información */
-  font-weight: bold;
+.donation-card:hover .icon-lg {
+  transform: scale(1.1);
+  opacity: 1;
 }
 
-/* Para subtítulos */
-.text-uppercase {
-  text-transform: uppercase;
+.account-info,
+.contact-info {
+  background-color: var(--light);
+  border-radius: 1rem;
+  transition: var(--card-transition);
+}
+
+.btn-outline-custom-primary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  transition: var(--card-transition);
+}
+
+.btn-outline-custom-primary:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Animaciones */
+@keyframes revealAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-animation {
+  animation: revealAnimation 0.8s forwards;
+}
+
+.fade-in-animation {
+  animation: revealAnimation 0.8s forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.8s forwards;
+  opacity: 0;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.8s forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .icon-lg {
+    font-size: 2.5rem;
+  }
 }

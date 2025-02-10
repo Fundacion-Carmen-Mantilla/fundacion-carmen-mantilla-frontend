@@ -1,25 +1,70 @@
-/* Sección principal */
-.contact-section {
-  margin: 0 auto;
-  max-width: 900px;
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  background-color: var(--light);
+  padding: 2rem 0;
 }
 
-/* Texto principal */
-.contact-section h1,
-.contact-section h2,
-.contact-section h3 {
-  font-family: 'Montserrat', sans-serif;
-  color: var(--primary);
+.contact-wrapper {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 1rem;
 }
 
-.contact-section p {
-  font-family: 'Roboto', sans-serif;
-  line-height: 1.6;
+.form-background {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(44, 76, 88, 0.1);
+  padding: 3rem;
+  transition: all 0.3s ease;
+}
+
+.form-background:hover {
+  box-shadow: 0 15px 40px rgba(44, 76, 88, 0.15);
+  transform: translateY(-5px);
+}
+
+.custom-form {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .form-background {
+    padding: 1.5rem;
+  }
+}
+
+/* Estilos personalizados para los campos de formulario */
+::ng-deep .form-group {
+  margin-bottom: 1.25rem;
+}
+
+::ng-deep .form-control {
+  border-color: var(--color-midblue);
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+::ng-deep .form-control:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem rgba(76, 92, 139, 0.25);
+}
+
+::ng-deep .btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+::ng-deep .btn-primary:hover {
+  background-color: var(--color-midblue);
+  border-color: var(--color-midblue);
+  transform: translateY(-2px);
+}
+
+::ng-deep .form-text {
   color: var(--secondary);
 }
-
-/* Formulario */
-.form-container {
-  padding: 0 15px;
-}
-

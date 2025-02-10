@@ -1,37 +1,79 @@
-<div class="container py-5 text-center">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <!-- Título principal -->
-      <h1 class="fw-bold mb-4">¡Tu apoyo nos ayuda a cambiar vidas!</h1>
-
-      <!-- Sección: Información de cuenta -->
-      <div class="info-block mb-5">
-        <h2 class="h5 text-primary fw-bold text-uppercase mb-3">Nuestra Cuenta</h2>
-        <p class="lead text-dark">
-          Con tu ayuda, podemos transformar vidas y llevar esperanza a quienes más lo necesitan. Realiza tu donación de manera fácil y segura en nuestra cuenta oficial:
-        </p>
-        <p class="fs-5 fw-bold">
-          <strong>Banco de Bogotá</strong><br>
-          <span>Cuenta de ahorros: 284-22386-4</span>
+<div class="donation-account-container container py-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="donation-header text-center mb-5">
+        <h1 class="display-6 fw-bold text-custom-primary mb-4 reveal-animation">
+          ¡Tu apoyo nos ayuda a cambiar vidas!
+        </h1>
+        <p class="lead text-muted fade-in-animation">
+          Cada contribución es un paso hacia la transformación y la esperanza
         </p>
       </div>
 
-      <!-- Sección: Qué hacer después -->
-      <div class="info-block mb-5">
-        <h2 class="h5 text-primary fw-bold text-uppercase mb-3">¿Qué hacer después?</h2>
-        <p class="lead text-dark">
-          Una vez hayas realizado tu aporte, estaremos encantados de saber de ti. Escríbenos al correo:
-        </p>
-        <p class="fs-5 fw-bold text-dark">
-          <strong>funcarmenmantilla&#64;hotmail.com</strong>
-        </p>
-        <p class="lead text-dark">
-          Indícanos a qué causa deseas destinar tu contribución para asegurarnos de que tu apoyo llegue exactamente a donde más se necesita.
-        </p>
+      <div class="donation-details">
+        <div class="card donation-card shadow-sm mb-4 slide-in-left">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-bank2 text-custom-primary me-3 icon-lg"></i>
+              <h2 class="h5 text-custom-primary mb-0">Nuestra Cuenta Oficial</h2>
+            </div>
+
+            <p class="text-muted mb-3">
+              Con tu ayuda, podemos transformar vidas y llevar esperanza a quienes más lo necesitan.
+              Realiza tu donación de manera fácil y segura en nuestra cuenta:
+            </p>
+
+            <div class="account-info bg-light p-3 rounded-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="h6 text-dark mb-1">{{ bankDetails.bank }}</h3>
+                  <p class="text-muted mb-0">Cuenta de ahorros: {{ bankDetails.accountNumber }}</p>
+                </div>
+                <button class="btn btn-outline-custom-primary btn-sm" (click)="copyToClipboardAccount(bankDetails.accountNumber )">
+                  {{ buttonTextAccount }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card donation-card shadow-sm slide-in-right">
+          <div class="card-body">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-envelope-heart text-custom-primary me-3 icon-lg"></i>
+              <h2 class="h5 text-custom-primary mb-0">¿Qué hacer después?</h2>
+            </div>
+
+            <p class="text-muted mb-3">
+              Una vez hayas realizado tu aporte, estaremos encantados de saber de ti.
+              Escríbenos al siguiente correo:
+            </p>
+
+            <div class="contact-info bg-light p-3 rounded-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <div>
+                  <h3 class="h6 text-dark mb-1">Contacto</h3>
+                  <p class="text-muted mb-0">{{ bankDetails.contactEmail }}</p>
+                </div>
+                <button class="btn btn-outline-custom-primary btn-sm" (click)="copyToClipboardEmail(bankDetails.contactEmail )">
+                  {{ buttonTextEmail }}
+                </button>
+              </div>
+            </div>
+
+            <p class="text-muted mt-3">
+              Indícanos a qué causa deseas destinar tu contribución para asegurarnos
+              de que tu apoyo llegue exactamente a donde más se necesita.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <!-- Frase de cierre motivadora -->
-      <p class="lead text-dark fw-bold">¡Gracias por ser parte de esta misión llena de esperanza!</p>
+      <div class="closing-message text-center mt-5 fade-in-animation">
+        <p class="lead text-dark fw-bold">
+          ¡Gracias por ser parte de esta misión llena de esperanza!
+        </p>
+      </div>
     </div>
   </div>
 </div>

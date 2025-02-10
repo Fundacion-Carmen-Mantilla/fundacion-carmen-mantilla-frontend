@@ -1,16 +1,18 @@
 <app-information-section></app-information-section>
-<div class="contact-section container py-5">
-  <!-- Formulario -->
-  <section class="form-container">
-    <app-dynamic-form
-      [fields]="formFields"
-      title="Formulario de Contacto"
-      (formSubmit)="onFormSubmit($event)"
-      [isLoading]="isLoading"
-      [buttonText]="'Enviar Mensaje'"
-    ></app-dynamic-form>
-  </section>
+
+<div class="contact-container">
+  <div class="contact-wrapper">
+    <div class="form-background">
+      <app-dynamic-form
+        [title]="'Formulario de contacto'"
+        [fields]="formFields"
+        (formSubmit)="onFormSubmit($event)"
+        [isLoading]="isLoading"
+        [buttonText]="'Enviar'"
+        class="custom-form"
+      ></app-dynamic-form>
+    </div>
+  </div>
 </div>
 
-<!-- Nueva sección del mapa -->
 <app-mapa-secction></app-mapa-secction>

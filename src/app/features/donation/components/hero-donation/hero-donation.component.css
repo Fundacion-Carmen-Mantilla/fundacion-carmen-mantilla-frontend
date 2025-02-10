@@ -1,33 +1,118 @@
-/* Tamaño personalizado del ícono */
+.hero-donation {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--light);
+}
+
+.hero-donation-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(76, 92, 139, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(44, 76, 88, 0.05) 0%,
+      transparent 50%
+    );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
 .icon-lg {
   font-size: 6rem;
   margin-bottom: 1.5rem;
+  color: var(--danger);
+  transition: all 0.4s ease;
 }
 
-/* Títulos principales */
-.container-fluid h1 {
-  font-family: 'Montserrat', sans-serif; /* Fuente elegante y profesional */
+/* Animaciones */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse-animation {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-animation {
+  opacity: 0;
+  animation: reveal 0.8s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-animation {
+  opacity: 0;
+  animation: fadeIn 0.8s forwards;
+  animation-delay: 0.4s;
+}
+
+/* Títulos y texto */
+.hero-title-container h1 {
+  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: var(--primary); /* Color principal enfocado en confianza */
+  color: var(--primary);
+  letter-spacing: -1px;
 }
 
-/* Texto descriptivo */
-.container-fluid p {
-  font-family: 'Roboto', sans-serif; /* Fuente amigable y accesible */
+.hero-description-container p {
+  font-family: 'Roboto', sans-serif;
   line-height: 1.8;
   font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Botón Donar */
-.btn.bg-custom-danger {
-  background-color: var(--danger); /* Rojo como acción urgente */
-  border: none;
-  font-size: 1.2rem; /* Tamaño del texto del botón */
-  font-weight: bold;
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .icon-lg {
+    font-size: 4rem;
+  }
 
-.btn.bg-custom-danger:hover {
-  background-color: var(--warning); /* Marrón para hover */
-  transition: background-color var(--transition-speed);
+  .hero-description-container p {
+    font-size: 1rem;
+  }
 }

@@ -1,101 +1,64 @@
-<div class="container my-5">
-  <!-- Título principal -->
+<!-- donation-information.component.html -->
+<div class="donation-information container py-5">
   <div class="text-center mb-5">
-    <p class="lead">
-      En Fundación Carmen Mantilla, cada donación nos acerca al bienestar de quienes más lo necesitan. <br>
-      ¡Únete y sé parte del cambio!
+    <h2 class="display-6 fw-bold text-custom-primary">
+      Formas de Contribuir
+    </h2>
+    <p class="lead text-muted">
+      Descubre múltiples maneras de generar un cambio positivo en nuestra comunidad
     </p>
   </div>
 
-  <!-- Sección de tarjetas -->
-  <div class="row gy-4">
-    <!-- Card 1: Alimentación -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-basket2-fill text-custom-success icon-lg"></i>
+  <div class="row gy-4 mb-5">
+    @for (option of donationOptions; track option) {
+      <div class="col-12 col-md-4">
+        <div class="card donation-card animation-hover shadow-sm h-100">
+          <div class="card-body text-center">
+            <div class="icon-container mb-3">
+              <i [class]="'bi ' + option.icon + ' icon-lg text-custom-primary'"></i>
+            </div>
+            <h4 class="card-title mb-3">{{ option.title }}</h4>
+            <p class="card-text text-muted mb-4">
+              {{ option.description }}
+            </p>
+            <div class="impact-highlight bg-light p-3 rounded">
+              <small class="text-muted">
+                <i class="bi bi-bullseye me-2"></i>
+                {{ option.impact }}
+              </small>
+            </div>
+<!--            <div class="mt-4">-->
+<!--              <button class="btn btn-outline-custom-primary rounded-pill">-->
+<!--                {{ option.buttonText }}-->
+<!--              </button>-->
+<!--            </div>-->
+          </div>
         </div>
-        <h4 class="text-custom-primary text-center">Garantizamos alimentación</h4>
-        <p class="text-center">
-          Tu ayuda asegura alimentos esenciales para familias en situación de pobreza extrema. <br>
-          Ayúdanos a llenar sus mesas y sus
-          corazones.
-        </p>
       </div>
-    </div>
-
-    <!-- Card 2: Educación -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-book-fill text-custom-dark icon-lg"></i>
-        </div>
-        <h4 class="text-custom-primary text-center">Invertimos en educación</h4>
-        <p class=" text-center">
-          Ayuda a proporcionar útiles escolares, capacitaciones, y proyectos que formen futuros líderes entre niños y jóvenes de nuestra
-          comunidad.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 3: Inclusión social -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-people-fill text-custom-danger icon-lg"></i> <!-- Icono agregado -->
-        </div>
-        <h4 class="text-custom-primary text-center">Promovemos la inclusión</h4>
-        <p class=" text-center">
-          Apoyemos juntos a madres cabeza de familia, personas discapacitadas y adultos mayores con inclusión y oportunidades para todos.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 4: Cultura y valores -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-brush-fill text-custom-primary icon-lg"></i>
-        </div>
-        <h4 class="text-custom-primary text-center">Fomentamos la cultura</h4>
-        <p class=" text-center">
-          Apoyemos actividades culturales y artísticas que enriquecen los valores y talentos de nuestros niños y jóvenes, promoviendo la
-          esperanza.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 5: Proyectos ambientales -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-tree-fill text-custom-success icon-lg"></i>
-        </div>
-        <h4 class="text-custom-primary text-center">Proyectos ambientales</h4>
-        <p class=" text-center">
-          Ayúdanos a cuidar el planeta con proyectos de cuidado ambiental, promoviendo espacios más saludables para las comunidades.
-        </p>
-      </div>
-    </div>
-
-    <!-- Card 6: Apoyo espiritual -->
-    <div class="col-md-6 col-lg-4 d-flex align-items-stretch">
-      <div class="card shadow border-0 p-4 bg-custom-light animation-hover">
-        <div class="text-center mb-4">
-          <i class="bi bi-person-lines-fill text-custom-dark icon-lg"></i>
-        </div>
-        <h4 class="text-custom-primary text-center">Apoyo espiritual</h4>
-        <p class=" text-center">
-          Fortalecemos la esperanza y el bienestar emocional con orientación espiritual para quienes más lo necesitan.
-        </p>
-      </div>
-    </div>
+    }
   </div>
 
-  <!-- Botón de acción -->
-  <!--  <div class="text-center mt-5">-->
-  <!--    <a href="#donate" class="btn btn-lg bg-custom-danger text-custom-light px-4 rounded-pill">-->
-  <!--      ¡Haz tu donación ahora!-->
-  <!--    </a>-->
-  <!--  </div>-->
+  <div class="motivational-section text-center mb-5">
+    <h2 class="display-6 fw-bold text-custom-primary mb-4">
+      ¿Por qué Confiar en Nosotros?
+    </h2>
+    <div class="row gy-4">
+      @for (card of motivationalCards; track card) {
+        <div class="col-12 col-md-4">
+          <div class="card motivational-card shadow-sm h-100">
+            <div class="card-body text-center">
+              <div class="icon-container mb-3">
+                <i [class]="'bi ' + card.icon + ' icon-lg text-custom-primary'"></i>
+              </div>
+              <h3 class="h5 mb-3 text-dark">{{ card.title }}</h3>
+              <p class="text-muted mb-4">{{ card.description }}</p>
+              <div class="stats-highlight bg-light p-3 rounded">
+                <h4 class="h6 text-custom-primary mb-0">{{ card.stats }}</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
 </div>
