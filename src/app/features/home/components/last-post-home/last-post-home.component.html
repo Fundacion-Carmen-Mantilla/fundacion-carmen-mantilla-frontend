@@ -1,0 +1,40 @@
+<div class="news-section container-fluid py-5">
+  <div class="container">
+    <div class="news-header text-center mb-5">
+      <span class="news-subtitle">DESARROLLO CULTURAL</span>
+      <h2 class="news-title">Expresiones que Conectan Culturas</h2>
+      <p class="news-description">
+        Exploramos y celebramos la riqueza cultural a través de nuestras iniciativas.
+        Cada publicación refleja nuestro compromiso con la preservación, el intercambio y
+        la transformación social mediante expresiones artísticas y culturales.
+      </p>
+    </div>
+
+    <div class="news-grid">
+      @for (post of ultimosPosts$ | async; track post) {
+        <div class="news-card" (click)="navigateToPost(post.id)">
+          <div class="news-card-image">
+            <img
+              [src]="post.imagen"
+              [alt]="post.titulo"
+              loading="lazy"
+            >
+            <div class="news-card-date">
+              {{ post.fecha | date:'MMM d' }}
+            </div>
+          </div>
+          <div class="news-card-content">
+            <h4 class="news-card-title">{{ post.titulo }}</h4>
+            <p class="news-card-excerpt">{{ post.resumen }}</p>
+            <div class="news-card-footer">
+              <span class="news-card-author">
+                <i class="bi bi-person-fill"></i> {{ post.autor }}
+              </span>
+              <a href="#" class="news-card-link">Ver post</a>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>
