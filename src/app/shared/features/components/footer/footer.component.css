@@ -1,41 +1,83 @@
-/* Fondo principal del footer */
 .footer-container {
-  background-color: var(--primary); /* Fondo principal del footer */
-  color: var(--light); /* Texto blanco para buen contraste */
-}
-
-/* Fondo del mapa con superposición */
-.background-footer {
-  height: 30vh;
-  background: url('https://res.cloudinary.com/djr0qadhh/image/upload/v1737330134/ninos-feliz-footer_pkhsu1.jpg') center / cover repeat;
+  background-color: var(--primary);
+  color: var(--light);
   position: relative;
-  margin-top: -100px;
+  overflow: hidden;
 }
 
-.background-footer::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(44, 76, 88, 0.8); /* Superposición semitransparente con color-darkblue */
+.footer-content {
+  position: relative;
+  z-index: 10;
+  padding: 4rem 0;
 }
 
-/* Social icons (posición ajustada) */
-.social-wrapper {
-  position: relative; /* Aseguramos que los iconos respeten su contexto */
-  margin-top: 20px; /* Agregamos espacio entre el copyright y los iconos */
-  margin-bottom: 80px;
+.footer-logo {
+  max-width: 200px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
-/* Botones de iconos sociales */
-.btn-outline-light {
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+.footer-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--light);
+}
+
+.footer-description {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.social-icon {
+  color: var(--light);
+  font-size: 1.8rem;
   transition: all 0.3s ease;
+  opacity: 0.8;
 }
 
-.btn-outline-light:hover {
-  background-color: var(--success); /* Iconos resaltan en verde claro al activar hover */
-  color: var(--light); /* Color blanco del icono en hover */
+.social-icon:hover {
+  color: var(--success);
+  transform: scale(1.2);
+  opacity: 1;
 }
 
-.btn-outline-light i {
-  font-size: 1.5rem; /* Tamaño del ícono dentro del botón */
+.footer-bottom {
+  background-color: rgba(0,0,0,0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.background-footer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://res.cloudinary.com/djr0qadhh/image/upload/v1737330134/ninos-feliz-footer_pkhsu1.jpg') center / cover;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .footer-social {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: 1.5rem;
+  }
 }
