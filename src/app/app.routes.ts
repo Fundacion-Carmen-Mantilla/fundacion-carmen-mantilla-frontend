@@ -27,7 +27,7 @@ export const routes: Routes = [
     component: LoginPageComponent
   },
   {
-    path: 'contacto',
+    path: 'contact',
     title: 'Fundación Carmen Mantilla - Contacto',
     component: ContactPageComponent
   },
