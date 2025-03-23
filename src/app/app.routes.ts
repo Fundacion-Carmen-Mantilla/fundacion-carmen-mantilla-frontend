@@ -5,6 +5,7 @@ import {LoginPageComponent} from './features/auth/pages/login-page/login-page.co
 import {ContactPageComponent} from './features/contact/pages/contact-page/contact-page.component';
 import {DonationPageComponent} from './features/donation/pages/donation-page/donation-page.component';
 import {AcademyPageComponent} from './features/academy/pages/academy-page/academy-page.component';
+import {MultimediaPageComponent} from './features/multimedia/pages/multimedia-page/multimedia-page.component';
 
 export const routes: Routes = [
   {
@@ -41,5 +42,10 @@ export const routes: Routes = [
     path: 'academy',
     title: 'Fundación Carmen Mantilla - Academia',
     component: AcademyPageComponent
+  },
+  {
+    path: 'multimedia',
+    title: 'Fundación Carmen Mantilla - Multimedia',
+    component: MultimediaPageComponent
   }
 ];
