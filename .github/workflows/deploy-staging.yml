@@ -50,5 +50,5 @@ jobs:
           username: ${{ secrets.STAGING_FTP_USERNAME }}
           password: ${{ secrets.STAGING_FTP_PASSWORD }}
           local-dir: ./dist/fundacion-carmen-mantilla-frontend/browser/
-          server-dir: home/staging/web-page/
+          server-dir: ./
           dangerous-clean-slate: true
