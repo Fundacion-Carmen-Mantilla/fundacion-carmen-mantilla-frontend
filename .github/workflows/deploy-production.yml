@@ -50,5 +50,5 @@ jobs:
           username: ${{ secrets.PRODUCTION_FTP_USERNAME }}
           password: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
           local-dir: ./dist/fundacion-carmen-mantilla-frontend/browser/
-          server-dir: /home/production/web-page/
+          server-dir: ./
           dangerous-clean-slate: true
