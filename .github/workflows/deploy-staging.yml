@@ -40,8 +40,8 @@ jobs:
           npm install -g @angular/cli@latest
           npm run build -- --configuration=staging
 
-      - name: Verificar archivos construidos
-        run: ls -la ./dist/fundacion-carmen-mantilla-frontend/browser
+      - name: Verificar archivos construidos (incluyendo .htaccess)
+        run: ls -la ./dist/fundacion-carmen-mantilla-frontend/browser/
 
       - name: Desplegar a Staging via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
