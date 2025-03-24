@@ -1,0 +1,54 @@
+name: Deploy Angular to Staging (Manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Rama a desplegar en Staging'
+        required: true
+        type: string
+        default: 'master'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout de la rama seleccionada
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Cache Node Modules
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+
+      - name: Instalar dependencias
+        run: npm ci --prefer-offline
+
+      - name: Build para Staging
+        run: |
+          npm install -g @angular/cli@latest
+          npm run build -- --configuration=staging
+
+      - name: Verificar archivos construidos
+        run: ls -la ./dist/fundacion-carmen-mantilla-frontend/browser
+
+      - name: Desplegar a Staging via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.STAGING_FTP_SERVER }}
+          username: ${{ secrets.STAGING_FTP_USERNAME }}
+          password: ${{ secrets.STAGING_FTP_PASSWORD }}
+          local-dir: ./dist/fundacion-carmen-mantilla-frontend/browser/
+          server-dir: /home/staging/web-page/
+          dangerous-clean-slate: true
